@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Usecase1</title>
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<style>
+    table, th, td {
+border: 1px solid black;
+   }
+</style>
+    </head>
+    <body class = "container">
+        <div>
+            <form class = "c1" style="margin-left: 400px; margin-top: 200px;">
+                <label for="name">Name:</label>
+                <input type = "text" id = "id1" placeholder="Enter Name"  /><br>
+                <label for="email">Contact No:</label>
+                <input type = "text" id = "id2" placeholder="Enter Contact Number" /><br>
+                <label for="Contact">Email Id:</label>
+                <input type = "text" id = "id3" placeholder="Enter Email Address"/><br>
+                <label for="Account">Account Type:</label>
+                <!--<input type = "text" id = "id3" placeholder="Enter Account number"/><br>-->
+                <select id = "id5">
+                    <option value = "Current">Current</option>
+                    <option value = "Savings">Savings</option>
+                </select><br>
+                <div align="left"><input type = "button" onclick = "Display()" value = "Add"/></div>
+            </form>
+            <div class ="c2" >
+                <table id = "id6" class = "table">
+                    <tr>
+                        <td>Name</td>
+                        <td>Contact</td>
+                        <td>Email</td>
+                        <td>Account</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+        <script>
+            Display = () => {
+                    var name = document.querySelector("#id1").value;
+                    var con = document.querySelector("#id2").value;
+                    var mail = document.querySelector("#id3").value;
+                    var acctype = document.querySelector("#id5").value;
+                    var table = document.querySelector("table");
+                    var row = document.createElement("tr");
+                    var cell1 = document.createElement("td");
+                    var cell2 = document.createElement("td");
+                    var cell3 = document.createElement("td");
+                    var cell4 = document.createElement("td");
+                    table.appendChild(row);
+                    row.appendChild(cell1);
+                    row.appendChild(cell2);
+                    row.appendChild(cell3);
+                    row.appendChild(cell4);
+                    cell1.innerHTML = name;
+                    cell2.innerHTML = con;
+                    cell3.innerHTML = mail;
+                    cell4.innerHTML = acctype;
+                    row.setAttribute("class","tableDark")
+                    cell1.setAttribute("scope","col")
+                    cell2.setAttribute("scope","col")
+                    cell3.setAttribute("scope","col")
+                    cell4.setAttribute("scope","col")
+                    console.log(name);
+
+
+            }
+
+            class customer{
+                constructor(Custname, custcontact, custemail, custaccount){
+                    this.name = custname;
+                    this.contact = custcontact;
+                    this.email = custemail;
+                    this.acc = custaccount;
+                }
+                getName(){
+                    return this.name;
+                }
+                getContact(){
+                    return this.contact;
+                }
+                getEmail(){
+                    return this.email;
+                }
+                getAcc(){
+                    return this.acc;
+                }
+
+            }
+        </script> 
+    </body>
+</html>

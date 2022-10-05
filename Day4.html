@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+    <script>
+        var count = 0;
+        function display(){
+        console.log("Hi!")
+        let element = document.querySelector("#id1");
+        console.log(element)
+        if(count % 2 === 0){   
+            element.src="https://av.sc.com/in/content/images/in_premiumbannerimage400x400.jpg"
+            element.style.width = "200px"
+            count++;
+        }
+        else{
+            element.src="https://av.sc.com/in/content/images/in-retiremath-hp-pintile.jpg"
+            element.style.width = "400px"
+            count++;
+        }
+    }
+        function click(){
+            document.querySelector("#id2").innerHTML="ckicked successfully";
+            //console.log(element)
+            //element.style.color = "red"
+        }
+        function change(val){
+            //alert("the new value is " + val);
+            let tname = document.querySelector("#id2");
+            let name = tname.value
+            console.log(element)
+            document.getElementById("id2").innerHTML = "You clicked me " + name
+        }
+
+    </script>
+    <img onclick = "display()" src="https://av.sc.com/in/content/images/in-retiremath-hp-pintile.jpg" height="250px" width="250px" id="id1">
+    <input id ="#id2" type="button" value="Submit" onclick="click()" > <input id="#id2" type="text" value="click me" onchange="change(this.value)" >
+</body>
+</html>

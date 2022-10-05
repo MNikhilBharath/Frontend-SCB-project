@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Usecase</title>
+    </head>
+    <style>
+        form{
+            margin-left: 500px;
+            
+            margin-top: 200px;
+        }
+    </style>
+    <body>
+        <form onsubmit="return validateName()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" value="Enter name"><br><br>
+            <label for="email">Email Id:</label>
+            <input type="text" id="email" value="Enter email"><br><br>
+            <label for="Contact">Contact No:</label>
+            <input type="text" id="Contact" value="Enter contact no"><br><br>
+            <label for="Account">Account Type:</label>
+            <select id="Account">
+                <option value="current">Current</option>
+                <option value="savings">Savings</option>
+              </select><br><br>
+            <input type="submit" value="Submit">
+          </form>
+        <script>
+            validateName = () => {
+                let element = document.querySelector("#name")
+                let pattern = "^[A-Z a-z]"
+                if(element.search(pattern) == -1){
+                    document.querySelector("span").innerHTML = "Name can only have alphabets";
+                    return false;
+                }
+                else{
+                    document.querySelector("span").innerHTML = "";
+                    return true;
+                }
+            }
+        </script>
+    </body>
+</html>

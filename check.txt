@@ -1,0 +1,19 @@
+         <div class="btn-group btn-group-toggle text-center" data-toggle="buttons">
+      <label class="btn btn-secondary active">
+        <input type="radio" name="options" id="option1" autocomplete="off" checked> New
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option2" autocomplete="off"> Pending
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option3" autocomplete="off"> History
+      </label>
+    </div>
+
+$('.product-options tr').click(function() {
+ $(this).children('td').children('input').prop('checked', true);
+  
+  $('.product-options tr').removeClass('selected');
+  $(this).toggleClass('selected');
+
+});
